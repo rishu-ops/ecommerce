@@ -12,11 +12,11 @@ router.post('/forget-password' , forgotPasswordController);
 
 router.get('/test' , requireSignIn , isAdmin , testController)
 
-router.get("/user-auth", requireSignIn, (req, res) => {
+router.get("/user-auth",  (req, res) => {
   res.status(200).json({ ok: true });
 });
 //protected Admin route auth
-router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
+router.get("/admin-auth", (req, res) => {
   res.status(200).json({ ok: true });
 });
 router.put('/profile'   , updateProfileController )
